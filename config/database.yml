@@ -35,5 +35,5 @@ production:
   database: mysite_production
   pool: 5
   username: dave
-  password: 123123
+  password: Password01!
   host: localhost
