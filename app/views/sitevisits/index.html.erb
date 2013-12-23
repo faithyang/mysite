@@ -1,0 +1,29 @@
+<h1>Listing sitevisits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ip</th>
+      <th>Ua</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sitevisits.each do |sitevisit| %>
+      <tr>
+        <td><%= sitevisit.ip %></td>
+        <td><%= sitevisit.ua %></td>
+        <td><%= link_to 'Show', sitevisit %></td>
+        <td><%= link_to 'Edit', edit_sitevisit_path(sitevisit) %></td>
+        <td><%= link_to 'Destroy', sitevisit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sitevisit', new_sitevisit_path %>
