@@ -4,8 +4,13 @@ source 'http://ruby.taobao.org'
 gem 'rails', '4.0.0'
 
 # Use mysql as the database for Active Record
-gem 'sqlite3'
-gem 'mysql2'
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'mysql2'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
