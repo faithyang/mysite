@@ -1,0 +1,25 @@
+<div class="aboutme">
+	<h1>Dave Wu</h1>
+</div>
+
+<div id="overview" class="aboutme">
+	<%= image_tag "mypic.jpg", alt: "my face" %>
+	<div>
+		<p>Living in <strong>Beijing</strong>, I make tools testing tools they use to test tools. Obviously there's a long way ahead for me to go.</p>
+		<p>I'm Multi-lingual: Mandarin, English, Nihongo, Italiano, C# and Ruby.
+	</div>
+	<div class="clean"></div>
+</div>
+
+
+<div class="content">
+	<h2>articles</h2>
+	
+	<ul>
+		<% @my_articles.each do |arti| %>
+		  <li><%= arti.created_at.to_date %>  |  <%= link_to arti.title, arti %></a></li>
+		<% end %>
+	</ul>
+	
+</div>
+

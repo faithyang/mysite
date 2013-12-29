@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mysite</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <title><%= @pagetitle %></title>
+	<%= stylesheet_link_tag "davewu" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <%= yield %>
 
-<%= yield %>
-
+		<div id="footer">
+			<p class="rights">
+				Copyright &copy; 2013 - 2014 by <a href="mailto:eyaswoo@163.com">Dave Wu</a>
+			  <br/>苏ICP备11046979号-3</p>
+		</div>			
+  </div>
 </body>
 </html>
