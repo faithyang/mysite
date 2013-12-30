@@ -32,16 +32,21 @@ div.container {
 	font-size: 5em;
 }
 
-.content {
-	margin: 0px 15px;
-}
+div.buttons div.button {
+	float: right;
+} 
 
-.content h2 {
-	margin-top: 30px;
+
+.content {
+	margin: 60px 15px;
 }
 
 .content li {
 	list-style: none;
+}
+
+.content li span {
+	margin-right: 30px;
 }
 
 
