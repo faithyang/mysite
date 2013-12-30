@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="article_header">
+  <p><strong><%= @article.title %></strong></p>
+	<p><%= @article.created_at.strftime "%b %d, %Y" %> reads:<%= @article.reads %></p>
+</div>
 
-<p>
-  <strong>Content:</strong>
+<div class="article_content">
   <%= @article.content %>
-</p>
+</div>
 
-<p>
-  <strong>Reads:</strong>
-  <%= @article.reads %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<div class="article_footer">
+  <p><%= link_to 'Back', root_path %></p>
+</div>

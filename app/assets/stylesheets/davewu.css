@@ -49,6 +49,13 @@ div.buttons div.button {
 	margin-right: 30px;
 }
 
+/* article */
+
+div.article_header {
+	text-align: center;
+	margin-top: 50px;
+}
+
 
 /* all for footer for all pages */
 #footer {

@@ -10,6 +10,12 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    if(@article.reads == nil)
+      @article.reads = 1
+    else
+      @article.reads += 1
+    end
+    @article.save
   end
 
   # GET /articles/new
