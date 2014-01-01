@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="article_header">
-  <p><strong><%= @article.title %></strong></p>
+	<p><%= link_to 'Dave Wu', root_path %>
+  <h1><%= @article.title %></h1>
 	<p><%= @article.created_at.strftime "%b %d, %Y" %> reads:<%= @article.reads %></p>
 </div>
 
 <div class="article_content">
   <%= @article.content %>
-</div>
-
-<div class="article_footer">
-  <p><%= link_to 'Back', root_path %></p>
 </div>
