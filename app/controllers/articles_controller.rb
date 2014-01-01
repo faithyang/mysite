@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @pagetitle = @article.title
     if(@article.reads == nil)
       @article.reads = 1
     else
