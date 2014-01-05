@@ -20,8 +20,8 @@
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :reads %><br>
-    <%= f.number_field :reads %>
+    <%= f.label :show_on_homepage %><br>
+    <%= f.check_box :show_on_homepage, {}, checked: true, unchecked: false %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @pagetitle = @article.title
-    if(@article.reads == nil)
+    unless @article.reads
       @article.reads = 1
     else
       @article.reads += 1
@@ -76,6 +76,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :reads)
+      params.require(:article).permit(:title, :content, :show_on_homepage, :reads)
     end
 end
