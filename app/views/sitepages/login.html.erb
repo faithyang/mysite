@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class="login">
+	<%= form_tag("authen") do %>
+	<fieldset>
+		<legend>Login master</legend>
+		<div>
+			<label for="name">Name:</label>
+			<%= text_field_tag :name, params[:name] %>
+		</div>
+			
+		<div>
+			<label for="password">Password:</label>
+		  <%= password_field_tag :password, params[:password] %>
+		</div>
+		
+		<div>
+			<%= submit_tag("Login") %>
+		</div>
+	</fieldset>
+	<% end %>
+</div>

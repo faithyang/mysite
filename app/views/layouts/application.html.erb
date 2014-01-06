@@ -12,7 +12,14 @@
 		<div id="footer">
 			<p class="rights">
 				Copyright &copy; 2013 - 2014 by <a href="mailto:eyaswoo@163.com">Dave Wu</a>
-			  <br/>苏ICP备11046979号-3</p>
+			  <br/>
+				苏ICP备11046979号-3 &nbsp;	&nbsp;
+				<% if(session[:isauthen] == true) %>
+				  :-) <%= link_to "logout", logout_url %>
+				<% else %>
+				  <%= link_to "login", login_url %>
+				<% end %>
+			</p>
 		</div>			
   </div>
 </body>

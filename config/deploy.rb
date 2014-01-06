@@ -7,10 +7,11 @@ set :scm, :git
 set :branch, "master"
 set :user, "dave"
 set :group, "dave"
-set :use_sudo, false
+set :use_sudo, true
 set :rails_env, "production"
 set :deploy_via, :copy
-set :ssh_options, { :forward_agent => true, :port => 2221 }
+set :ssh_options, { :forward_agent => true, :port => 2221, :keys => [File.join(ENV["HOME"], ".ssh","id_rsa")] }
+#set :sudo_prompt, ""
 
 set :keep_releases, 3
 default_run_options[:pty] = true
@@ -44,7 +45,7 @@ namespace :deploy do
 end
 
 #after "deploy", "deploy:symlink_config_files"
-after "deploy", "deploy:precompile_assets"
+#after "deploy", "deploy:precompile_assets"
 after "deploy", "deploy:migrate"
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"

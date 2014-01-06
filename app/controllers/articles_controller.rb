@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :is_authen, except: [:show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
@@ -78,4 +79,14 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :content, :show_on_homepage, :reads)
     end
+    
+  protected
+  
+    def is_authen
+      unless(session[:isauthen] == true)
+        redirect_to login_url, notice: "You should login first"
+      end
+    end 
+  
+  
 end
