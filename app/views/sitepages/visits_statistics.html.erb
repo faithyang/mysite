@@ -9,7 +9,7 @@
 	
 	<% @visits.each do |each| %>
 	<tr>
-		<td><%= each.created_at %></td>
+		<td><%= each.created_at.localtime %></td>
 		<td><%= each.ip %></td>
 		<td><%= each.ua %></td>
 	</tr>
