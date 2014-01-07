@@ -68,6 +68,26 @@ div.article_header p {
 	margin-bottom: 0px;
 }
 
+/* for visits statistics page */
+table.bigtable {
+	border-collapse: collapse;
+	width: 100%;
+}
+table.bigtable, table.bigtable td {
+	border: 1px solid blue;
+}
+
+table.bigtable th {
+	background-color: blue;
+	color: white;
+}
+
+table.bigtable td {
+	font-size: 0.6em;
+}
+
+
+
 /* all for footer for all pages */
 #footer {
 	clear: both;

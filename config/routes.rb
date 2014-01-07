@@ -10,6 +10,8 @@ Mysite::Application.routes.draw do
   
   get 'login' => 'sitepages#login'
   get 'logout' => 'admin#logout'
+  get 'visits' => 'sitepages#visits_statistics'
+  
   post 'authen' => 'admin#authenticate'
 
   # Example of regular route:

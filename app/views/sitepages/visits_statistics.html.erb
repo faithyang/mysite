@@ -1,0 +1,18 @@
+<h2>Visits Statistics</h2>
+
+<table id="visit_stati" class="bigtable">
+	<tr>
+		<th>Time</th>
+		<th>IP</th>
+		<th>UA</th>
+	</tr>
+	
+	<% @visits.each do |each| %>
+	<tr>
+		<td><%= each.created_at %></td>
+		<td><%= each.ip %></td>
+		<td><%= each.ua %></td>
+	</tr>
+	<% end %>	
+	
+</table>
