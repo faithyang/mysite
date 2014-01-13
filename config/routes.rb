@@ -11,9 +11,11 @@ Mysite::Application.routes.draw do
   get 'login' => 'sitepages#login'
   get 'logout' => 'admin#logout'
   get 'visits' => 'sitepages#visits_statistics'
+  get 'upload' => 'sitepages#upload'
   
   post 'authen' => 'admin#authenticate'
 
+  post 'uploadfile' => 'sitepages#upload_file'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

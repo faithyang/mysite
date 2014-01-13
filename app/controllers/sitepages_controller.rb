@@ -27,6 +27,29 @@ class SitepagesController < ApplicationController
     
   end
   
+  def upload
+    
+    @uploaded_files = Dir.glob(Rails.root.join('public','images','*.*'))
+    
+    
+    
+  end
+  
+  def upload_file
+    
+    uploaded_io = params[:picture]
+    File.open(Rails.root.join('public', 'images', uploaded_io.original_filename), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to upload_url }
+      format.json { head :no_content }
+    end
+    
+    
+  end
+  
   protected
   
   def is_authen
