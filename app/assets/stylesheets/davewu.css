@@ -86,7 +86,22 @@ table.bigtable td {
 	font-size: 0.6em;
 }
 
+div.comments {
+	border-top: 1px solid #ddd;
+	font-size: 0.75em;
+	background-color: azure;
+	margin-top: 20px;
+}
 
+div.comments p {
+	padding: 0 0 0 20px;
+	margin: 0;
+}
+
+div.comments p.comment_text {
+	padding-left: 30px;
+	margin: 0 0 25px 0;
+}
 
 /* all for footer for all pages */
 #footer {

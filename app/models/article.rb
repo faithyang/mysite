@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  has_many :comments, dependent: :destroy
+  
   before_save :set_default
   
   protected

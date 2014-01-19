@@ -9,3 +9,30 @@
 <div class="article_content">
   <%= raw(@article.content) %>
 </div>
+
+<div class="comments">
+	<% if @article.comments.length < 1 then %>
+	  <p>No comment yet</p>
+	<% else %>
+	  <% @article.comments.each do |c| %>
+		  <p class="commentor"><%= c.commentor %> At <%= c.created_at.strftime "%b %d, %Y" %></p>
+		  <p class="comment_text">&quot;<%= c.content %>&quot;</p>
+		<% end %>	
+	<% end %>
+</div>
+
+<!--
+<div class="commenting">
+	<%= form_tag(controller: "comments", action: "create") do %>
+	  <%= label_tag(:commentor, 'Name:') %>
+		<%= text_field_tag(:commentor) %><br/>
+		<%= label_tag(:content, 'Comment:') %><br/>
+		<%= text_area_tag(:content) %><br/>
+		<%= text_field_tag(:chell) %><br/>
+			
+		<%= submit_tag 'Comment!' %>
+	<% end %>	
+</div>
+-->
+
+

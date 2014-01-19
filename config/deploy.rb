@@ -18,16 +18,7 @@ default_run_options[:pty] = true
 server "dave5.me", :app, :web, :db, :primary => true
 
 namespace :deploy do
-  task :start do
-    ;
-  end
-  
-  task :stop do ; end
 
-  desc "Symlink shared config files"
-  task :symlink_config_files do
-    run "#{ sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
-  end
 
   # NOTE: I don't use this anymore, but this is how I used to do it.
   desc "Precompile assets after deploy"
@@ -44,7 +35,6 @@ namespace :deploy do
   end
 end
 
-#after "deploy", "deploy:symlink_config_files"
 after "deploy", "deploy:precompile_assets"
 after "deploy", "deploy:migrate"
 after "deploy", "deploy:restart"

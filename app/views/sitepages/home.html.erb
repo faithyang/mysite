@@ -20,7 +20,7 @@
 	<h2>articles</h2>
 	
 	<ul>
-		<% @my_articles.each do |arti| %>
+		<% @my_articles.reverse.each do |arti| %>
 		  <li><span><%= arti.created_at.strftime "%b %d, %Y" %></span> <%= link_to arti.title, arti %></li>
 		<% end %>
 	</ul>

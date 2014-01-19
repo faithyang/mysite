@@ -1,5 +1,7 @@
 Mysite::Application.routes.draw do
   
+  get "comments/create"
+  get "comments/destroy"
   resources :articles
   
   # The priority is based upon order of creation: first created -> highest priority.
