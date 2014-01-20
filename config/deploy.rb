@@ -33,9 +33,28 @@ namespace :deploy do
   task :restart do
     run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
   end
+  
+  desc "backup images to shared folder"
+  task :backup_images do
+    run "cp -f #{ current_path + '/public/images/*.*'} #{ shared_path + '/images/' }"
+  end
+  
+  desc "restore images"
+  task :restore_images do
+    run <<-CMD
+      mkdir #{ current_path + '/public/images'} &&
+      cp -f #{ shared_path + '/images/*.*'} #{ current_path + '/public/images/'}
+    CMD
+  end
+  
 end
 
-after "deploy", "deploy:precompile_assets"
+before "deploy", "deploy:backup_images"
+
+#after "deploy", "deploy:precompile_assets"
 after "deploy", "deploy:migrate"
+
+after "deploy", "deploy:restore_images"
+
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
