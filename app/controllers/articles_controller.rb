@@ -86,7 +86,5 @@ class ArticlesController < ApplicationController
       unless(session[:isauthen] == true)
         redirect_to login_url, notice: "You should login first"
       end
-    end 
-  
-  
+    end
 end

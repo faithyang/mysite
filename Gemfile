@@ -12,6 +12,8 @@ group :production do
   gem 'mysql2'
 end
 
+gem "recaptcha", require: "recaptcha/rails"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

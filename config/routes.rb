@@ -1,8 +1,8 @@
 Mysite::Application.routes.draw do
   
-  get "comments/create"
-  get "comments/destroy"
   resources :articles
+  
+  post '/articles/:id/comments/new' => 'comments#create', as: :create_comment
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -16,7 +16,6 @@ Mysite::Application.routes.draw do
   get 'upload' => 'sitepages#upload'
   
   post 'authen' => 'admin#authenticate'
-
   post 'uploadfile' => 'sitepages#upload_file'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -21,18 +21,19 @@
 	<% end %>
 </div>
 
-<!--
+
 <div class="commenting">
-	<%= form_tag(controller: "comments", action: "create") do %>
+	<p>Leave your comment:</p>
+	<%= form_tag(create_comment_path @article.id ) do %>
 	  <%= label_tag(:commentor, 'Name:') %>
 		<%= text_field_tag(:commentor) %><br/>
 		<%= label_tag(:content, 'Comment:') %><br/>
 		<%= text_area_tag(:content) %><br/>
-		<%= text_field_tag(:chell) %><br/>
+		<%= recaptcha_tags %>
 			
 		<%= submit_tag 'Comment!' %>
 	<% end %>	
 </div>
--->
+
 
 
