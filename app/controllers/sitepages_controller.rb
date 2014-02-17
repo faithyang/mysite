@@ -3,6 +3,7 @@ class SitepagesController < ApplicationController
   
   def home
     @pagetitle = "Dave Wu"
+    @visitor_count = Sitevisit.all.count
     
     @my_articles = Article.where(show_on_homepage: true)
     
